@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Recommendation System</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f6f7fb; }
+        h1 { color: #333; }
+        form { background: white; padding: 20px; border-radius: 10px; width: 400px; }
+        input, select, button { width: 100%; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
+        button { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+        .results { margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <h1>🎓 Event Recommendation System</h1>
+    <form action="/recommend" method="post">
+        <label for="user_id">Enter User ID:</label>
+        <input type="text" name="user_id" required>
+
+        <label for="event_id">Or Enter Event ID (for new user):</label>
+        <input type="text" name="event_id">
+
+        <button type="submit">Get Recommendations</button>
+    </form>
+
+    {% if recommendations %}
+    <div class="results">
+        <h2>Top Recommended Events</h2>
+        <ul>
+            {% for r in recommendations %}
+                <li>
+                    <strong>{{ r.event_type }}</strong> - {{ r.event_sub_event }} (ID: {{ r.event_id }})
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</body>
+</html>
