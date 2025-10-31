@@ -6,5 +6,5 @@ scikit-learn==1.6.1
 matplotlib==3.10.0
 seaborn==0.13.2
 joblib==1.4.2
-scikit-surprise @ https://files.pythonhosted.org/packages/d7/f4/27eeb0fa26ed4c61b5e17f00dba7b0deac2177b61e4e9ed8f1ecb0e7fc18/scikit_surprise-1.1.1-cp311-cp311-manylinux2014_x86_64.whl
+git+https://github.com/NicolasHug/Surprise.git
 
